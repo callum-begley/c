@@ -58,45 +58,49 @@ clearButton.addEventListener('click', function () {
     })
   })
   createGameBoard(board)
+  addClick()
 })
 
 // Click
-board.map((currentRow, row) => {
+function addClick(){
+  board.map((currentRow, row) => {
   currentRow.map((currentCol, col) => {
     const gridBox = document.getElementById('gridBox.' + row + '.' + col)
     gridBox.addEventListener('click', function () {
       currentCol = !currentCol
       board[row][col] = currentCol
       gridBox.class = 'alive'
-      // nextBoard(board)
       displayBoard(board)
     })
   })
 })
+}
+
+addClick()
 
 // aliens.forEach(([col,row]) => {
 //   board[row][col] = true  
 //   })
 // displayBoard(board)
 
-const spaceship = [
-    [35, 66], [36, 66], [37, 66], [48, 66], [49, 66], [50, 66],
-    [30, 67], [31, 67], [32, 67], [34, 67], [42, 67], [43, 67], [51, 67],[53, 67],[54, 67],[55, 67],
-    [34, 68], [38, 68], [41, 68], [44, 68], [47, 68], [51, 68],
-    [34, 69], [40, 69], [45, 69], [51, 69],
-    [40, 70], [41, 70], [44, 70], [45, 70],
-    [37, 71], [41, 71], [44, 71], [48, 71],
-    [37, 72], [39, 72], [46, 72], [48, 72],
-    [38, 73], [39, 73], [40, 73], [41, 73], [42, 73], [43, 73], [44, 73], [45, 73], [46, 73], [47, 73],
-    [40, 74], [45, 74], 
-    [38, 75], [47, 75], 
-    [37, 76], [48, 76], 
-    [38, 77], [47, 77], 
- ]
+// const spaceship = [
+//     [35, 66], [36, 66], [37, 66], [48, 66], [49, 66], [50, 66],
+//     [30, 67], [31, 67], [32, 67], [34, 67], [42, 67], [43, 67], [51, 67],[53, 67],[54, 67],[55, 67],
+//     [34, 68], [38, 68], [41, 68], [44, 68], [47, 68], [51, 68],
+//     [34, 69], [40, 69], [45, 69], [51, 69],
+//     [40, 70], [41, 70], [44, 70], [45, 70],
+//     [37, 71], [41, 71], [44, 71], [48, 71],
+//     [37, 72], [39, 72], [46, 72], [48, 72],
+//     [38, 73], [39, 73], [40, 73], [41, 73], [42, 73], [43, 73], [44, 73], [45, 73], [46, 73], [47, 73],
+//     [40, 74], [45, 74], 
+//     [38, 75], [47, 75], 
+//     [37, 76], [48, 76], 
+//     [38, 77], [47, 77], 
+//  ]
 
 
 
-spaceship.forEach(([col,row]) => {
-  board[row][col] = true  
-  })
-displayBoard(board)
+// spaceship.forEach(([col,row]) => {
+//   board[row][col] = true  
+//   })
+// displayBoard(board)
